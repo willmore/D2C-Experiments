@@ -1,0 +1,4 @@
+running on 1 cpu, 1GB memory
+N = sqrt(1073741824 / 8 ) * .8 = 9268 
+P = Q = 1
+
