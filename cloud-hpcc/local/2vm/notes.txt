@@ -1,0 +1,5 @@
+running on 2 cpu, 500MB memory each
+N = sqrt(1073741824 / 8 ) * .8 = 9268 
+P = 1
+Q = 2
+
