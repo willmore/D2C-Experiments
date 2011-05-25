@@ -1,0 +1,423 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  0.7.2.6974
+ |___|_|             
+
+User: dirac@dirac
+Date: Sun May  1 22:16:22 2011
+Arch: x86_64
+Pid:  752
+Dir:  /usr/lib/python2.6/dist-packages/gpaw
+ase:   /usr/lib/python2.6/dist-packages/ase  version:  3.4.1
+numpy: /usr/lib/python2.6/dist-packages/numpy
+units: Angstrom and eV
+
+Memory estimate
+---------------
+Calculator  839.40 MiB
+    Initial overhead  107.58 MiB
+    Density  56.37 MiB
+        Arrays  10.16 MiB
+        Localized functions  34.05 MiB
+        Mixer  2.32 MiB
+        Interpolator  9.84 MiB
+    Hamiltonian  70.47 MiB
+        Arrays  6.64 MiB
+        Restrictor  6.36 MiB
+        XC 3D grid  28.95 MiB
+        Poisson  25.98 MiB
+        vbar  2.54 MiB
+    Wavefunctions  604.98 MiB
+        Arrays psit_nG  396.00 MiB
+        Eigensolver  102.87 MiB
+        Projectors  5.65 MiB
+        Overlap op  99.25 MiB
+        Kinetic operator  1.22 MiB
+
+Positions:
+  0 Au    1.4425    0.8328   12.0000
+  1 Au    4.3275    0.8328   12.0000
+  2 Au    0.0000    3.3313   12.0000
+  3 Au    2.8850    3.3313   12.0000
+  4 Au    0.0000    1.6657   14.3556
+  5 Au    2.8850    1.6657   14.3556
+  6 Au    1.4425    4.1641   14.3556
+  7 Au    4.3275    4.1641   14.3556
+  8 Au    0.0000    0.0000   16.7112
+  9 Au    2.8850    0.0000   16.7112
+ 10 Au    1.4425    2.4985   16.7112
+ 11 Au    4.3275    2.4985   16.7112
+ 12 B     2.8850    1.6657   19.4736
+ 13 F     4.0164    2.3189   19.0117
+ 14 F     1.7536    2.3189   19.0117
+ 15 F     2.8850    0.3593   19.0117
+ 16 F     2.8850    1.6657   20.8592
+
+    .-------------.  
+   /|             |  
+  / |             |  
+ *  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |    F        |  
+ |  |  F B  F     |  
+ |  |             |  
+ |  |   F         |  
+ |  | Au     Au   |  
+ |  |             |  
+ Au |  AAu    Au  |  
+ |  |             |  
+ |Au|    Au       |  
+ | Au     Au      |  
+ |  |             |  
+ |  |Au     Au    |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  .-------------.  
+ | /             /   
+ |/             /    
+ *-------------*     
+
+Unit Cell:
+           Periodic     X           Y           Z      Points  Spacing
+  --------------------------------------------------------------------
+  1. axis:    yes    5.769991    0.000000    0.000000    36     0.1603
+  2. axis:    yes    0.000000    4.996959    0.000000    32     0.1562
+  3. axis:    no     0.000000    0.000000   28.711178   180     0.1595
+
+Au-setup:
+  name   : Gold
+  id     : f729301af73151f9133db6f6e28f92a1
+  Z      : 79
+  valence: 11
+  core   : 68
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/Au.RPBE.gz
+  cutoffs: 1.32(comp), 2.33(filt), 2.81(core), lmax=2
+  valence states:
+            energy   radius
+    6s(1)   -5.611   1.323
+    6p(0)   -0.793   1.323
+    5d(10)  -6.824   1.323
+    *s      21.600   1.323
+    *p      26.419   1.323
+    *d      20.388   1.323
+
+Using partial waves for Au as LCAO basis
+
+B-setup:
+  name   : Boron
+  id     : 4c085ebb9e6144015c26e053032a3a9b
+  Z      : 5
+  valence: 3
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/B.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 1.38(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)   -9.489   0.635
+    2p(1)   -3.587   0.635
+    *s      17.723   0.635
+    *p      23.625   0.635
+    *d       0.000   0.635
+
+Using partial waves for B as LCAO basis
+
+F-setup:
+  name   : Fluorine
+  id     : 96d5c0c6d5d6dd1db009b0a4cc47c564
+  Z      : 9
+  valence: 7
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/F.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 0.74(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)  -29.979   0.635
+    2p(5)  -11.057   0.635
+    *s      -2.768   0.635
+    *p      16.154   0.635
+    *d       0.000   0.635
+
+Using partial waves for F as LCAO basis
+
+Using the RPBE Exchange-Correlation Functional.
+Spin-Paired Calculation
+Total Charge:      0.000000
+Fermi Temperature: 0.100000
+Mode: Finite-difference
+Eigensolver:       rmm-diis
+                   (3 nearest neighbors central finite-difference stencil)
+Poisson Solver:    Jacobi 
+                   (3 nearest neighbors central finite-difference stencil)
+Interpolation:     6th Order
+Reference Energy:  -6210894.257834
+
+Total number of cores used: 4
+Domain Decomposition: 1 x 1 x 4
+Diagonalizer layout: Serial LAPACK
+Orthonormalizer layout: Serial LAPACK
+
+Symmetries present: 2
+4 k-points in the Irreducible Part of the Brillouin Zone (total: 16)
+Linear Mixing Parameter:           0.1
+Pulay Mixing with 3 Old Densities
+Damping of Long Wave Oscillations: 50
+
+Convergence Criteria:
+Total Energy Change per Atom:           0.001 eV / atom
+Integral of Absolute Density Change:    0.0001 electrons
+Integral of Absolute Eigenstate Change: 1e-09
+Number of Bands in Calculation:         128
+Bands to Converge:                      Occupied States Only
+Number of Valence Electrons:            163
+                     log10-error:    Total        Iterations:
+           Time      WFS    Density  Energy       Fermi  Poisson
+iter:   1  22:23:54  +1.3            -50.22805    2      670    
+iter:   2  22:26:34  -1.4            -59.61824    3             
+iter:   3  22:29:14  -1.8            -61.15232    3             
+iter:   4  22:33:40  -2.0   -1.3     -58.27141    11     346    
+iter:   5  22:38:28  -1.4   -1.4     -54.39998    21     427    
+iter:   6  22:41:58  -2.2   -1.7     -55.25702    3      137    
+iter:   7  22:45:27  -2.9   -1.8     -55.20508    3      124    
+iter:   8  22:48:42  -3.3   -1.8     -55.20072    3      101    
+iter:   9  22:51:58  -2.7   -1.9     -55.17475    4      92     
+iter:  10  22:54:59  -3.7   -2.4     -55.20276    3      59     
+iter:  11  22:58:24  -3.7   -2.4     -55.18928    4      125    
+iter:  12  23:01:37  -4.1   -2.7     -55.19065    3      75     
+iter:  13  23:04:36  -4.8   -2.8     -55.18841    3      51     
+iter:  14  23:07:27  -5.1   -2.9     -55.18494    3      24     
+iter:  15  23:10:26  -5.1   -3.0     -55.18554    3      62     
+iter:  16  23:13:16  -5.7   -3.4     -55.18863    2      11     
+iter:  17  23:16:08  -5.8   -3.5     -55.19001    3      20     
+iter:  18  23:18:56  -6.1   -3.7     -55.19025    2      9      
+iter:  19  23:21:50  -6.3   -3.9     -55.19011    2      16     
+iter:  20  23:24:43  -6.8   -4.1     -55.18984    2      3      
+iter:  21  23:27:30  -7.0   -4.2     -55.18875    2      3      
+iter:  22  23:30:18  -7.4   -4.4     -55.18797    2      3      
+iter:  23  23:33:11  -7.8   -4.5     -55.18795    2      2      
+iter:  24  23:35:55  -7.8   -4.6     -55.18880    2      3      
+iter:  25  23:38:41  -8.2   -4.8     -55.18885    2      2      
+iter:  26  23:41:23  -7.6   -4.8     -55.18851    2      4      
+iter:  27  23:44:10  -8.2   -4.7     -55.18890    2      2      
+iter:  28  23:46:56  -8.8   -4.8     -55.18916    2      2      
+iter:  29  23:49:42  -9.2   -4.9     -55.18913    2      1      
+------------------------------------
+Converged After 29 Iterations.
+
+Energy Contributions Relative to Reference Atoms:(reference = -6210894.25783)
+-------------------------
+Kinetic:        -37.87393
+Potential:      +21.43176
+External:        +0.00000
+XC:             -41.20956
+Entropy (-ST):   -0.12362
+Local:           +2.52441
+-------------------------
+Free Energy:    -55.25094
+Zero Kelvin:    -55.18913
+
+Fermi Level: -6.94271
+
+
+Total Charge:  -0.000000 electrons
+Dipole Moment: [-3.3130792  -4.569963   -0.86115471]
+
+Forces in eV/Ang:
+  0 Au    0.00621   -0.00104   -0.71300
+  1 Au   -0.00621   -0.00104   -0.71300
+  2 Au    0.00000   -0.01474   -0.69423
+  3 Au    0.00000   -0.02997   -0.80809
+  4 Au    0.00000    0.09045    0.17223
+  5 Au    0.00000    0.02100    0.14067
+  6 Au    0.07517   -0.01668    0.16688
+  7 Au   -0.07517   -0.01668    0.16688
+  8 Au    0.00000   -0.04664    0.48351
+  9 Au    0.00000   -0.23864   -0.14251
+ 10 Au   -0.32333    0.11555   -0.09647
+ 11 Au    0.32333    0.11555   -0.09647
+ 12 B     0.00000    0.03900    3.11774
+ 13 F     1.62895    0.85983   -0.32733
+ 14 F    -1.62895    0.85983   -0.32733
+ 15 F     0.00000   -1.85434   -0.30807
+ 16 F     0.00000    0.00308   -0.03698
+
+Positions:
+  0 Au    1.4425    0.8328   12.0000
+  1 Au    4.3275    0.8328   12.0000
+  2 Au    0.0000    3.3313   12.0000
+  3 Au    2.8850    3.3313   12.0000
+  4 Au    0.0000    1.6657   14.3556
+  5 Au    2.8850    1.6657   14.3556
+  6 Au    1.4425    4.1641   14.3556
+  7 Au    4.3275    4.1641   14.3556
+  8 Au    0.0000   -0.0006   16.7174
+  9 Au    2.8850   -0.0031   16.7094
+ 10 Au    1.4383    2.5000   16.7099
+ 11 Au    4.3316    2.5000   16.7099
+ 12 B     2.8850    1.6662   19.5136
+ 13 F     4.0373    2.3299   19.0075
+ 14 F     1.7327    2.3299   19.0075
+ 15 F     2.8850    0.3355   19.0078
+ 16 F     2.8850    1.6657   20.8588
+
+    .-------------.  
+   /|             |  
+  / |             |  
+ *  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |    F        |  
+ |  |  F B  F     |  
+ |  |             |  
+ |  Au  F  Au     |  
+ |  | Au     Au   |  
+ |  |             |  
+ |  |  Au     Au  |  
+ |  |             |  
+ |Au|    Au       |  
+ | Au     Au      |  
+ |  |             |  
+ |  |Au     Au    |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  |             |  
+ |  .-------------.  
+ | /             /   
+ |/             /    
+ *-------------*     
+
+Unit Cell:
+           Periodic     X           Y           Z      Points  Spacing
+  --------------------------------------------------------------------
+  1. axis:    yes    5.769991    0.000000    0.000000    36     0.1603
+  2. axis:    yes    0.000000    4.996959    0.000000    32     0.1562
+  3. axis:    no     0.000000    0.000000   28.711178   180     0.1595
+
+Au-setup:
+  name   : Gold
+  id     : f729301af73151f9133db6f6e28f92a1
+  Z      : 79
+  valence: 11
+  core   : 68
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/Au.RPBE.gz
+  cutoffs: 1.32(comp), 2.33(filt), 2.81(core), lmax=2
+  valence states:
+            energy   radius
+    6s(1)   -5.611   1.323
+    6p(0)   -0.793   1.323
+    5d(10)  -6.824   1.323
+    *s      21.600   1.323
+    *p      26.419   1.323
+    *d      20.388   1.323
+
+Using partial waves for Au as LCAO basis
+
+B-setup:
+  name   : Boron
+  id     : 4c085ebb9e6144015c26e053032a3a9b
+  Z      : 5
+  valence: 3
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/B.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 1.38(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)   -9.489   0.635
+    2p(1)   -3.587   0.635
+    *s      17.723   0.635
+    *p      23.625   0.635
+    *d       0.000   0.635
+
+Using partial waves for B as LCAO basis
+
+F-setup:
+  name   : Fluorine
+  id     : 96d5c0c6d5d6dd1db009b0a4cc47c564
+  Z      : 9
+  valence: 7
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/F.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 0.74(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)  -29.979   0.635
+    2p(5)  -11.057   0.635
+    *s      -2.768   0.635
+    *p      16.154   0.635
+    *d       0.000   0.635
+
+Using partial waves for F as LCAO basis
+
+Using the RPBE Exchange-Correlation Functional.
+Spin-Paired Calculation
+Total Charge:      0.000000
+Fermi Temperature: 0.100000
+Mode: Finite-difference
+Eigensolver:       rmm-diis
+                   (3 nearest neighbors central finite-difference stencil)
+Poisson Solver:    Jacobi 
+                   (3 nearest neighbors central finite-difference stencil)
+Interpolation:     6th Order
+Reference Energy:  -6210894.257834
+
+Total number of cores used: 4
+Domain Decomposition: 1 x 1 x 4
+Diagonalizer layout: Serial LAPACK
+Orthonormalizer layout: Serial LAPACK
+
+Symmetries present: 2
+4 k-points in the Irreducible Part of the Brillouin Zone (total: 16)
+Linear Mixing Parameter:           0.1
+Pulay Mixing with 3 Old Densities
+Damping of Long Wave Oscillations: 50
+
+Convergence Criteria:
+Total Energy Change per Atom:           0.001 eV / atom
+Integral of Absolute Density Change:    0.0001 electrons
+Integral of Absolute Eigenstate Change: 1e-09
+Number of Bands in Calculation:         128
+Bands to Converge:                      Occupied States Only
+Number of Valence Electrons:            163
+                     log10-error:    Total        Iterations:
+           Time      WFS    Density  Energy       Fermi  Poisson
+iter:   1  23:54:46  -0.8            -52.52040    4      168    
+iter:   2  23:58:05  -1.8   -1.9     -56.39593    3      97     
+iter:   3  00:01:10  -2.0   -1.9     -57.98497    3      93     
+iter:   4  00:04:29  -1.9   -1.7     -54.95237    4      102    

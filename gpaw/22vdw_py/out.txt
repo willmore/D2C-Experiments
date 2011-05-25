@@ -1,0 +1,179 @@
+nohup: ignoring input
+test123
+Deployment state changed to: LAUNCHING_INSTANCES
+Launching instances
+Roles = [<d2c.model.Role.Role instance at 0x7f40c53b7830>, <d2c.model.Role.Role instance at 0x7f40c53b7ab8>]
+Reserving 1 instance(s) of ami-1396a167
+Initiating connection to ec2 region 'eu-west-1'...
+EC2 connection established
+Instance(s) reserved
+Reserving 1 instance(s) of ami-1396a167
+Instance(s) reserved
+Getting instances states for reservation-id(s): [u'r-ab874cdd', u'r-97874ce1']
+Got reservations: [Reservation:r-ab874cdd, Reservation:r-97874ce1]
+Instance states for reservations [u'r-ab874cdd', u'r-97874ce1'] are [u'pending', u'pending']
+All instances not running; continue polling.
+All instances now running
+Getting instances states for reservation-id(s): [u'r-ab874cdd', u'r-97874ce1']
+Got reservations: [Reservation:r-ab874cdd, Reservation:r-97874ce1]
+Instance states for reservations [u'r-ab874cdd', u'r-97874ce1'] are [u'pending', u'running']
+All instances not running; continue polling.
+All instances now running
+Getting instances states for reservation-id(s): [u'r-ab874cdd', u'r-97874ce1']
+Got reservations: [Reservation:r-ab874cdd, Reservation:r-97874ce1]
+Instance states for reservations [u'r-ab874cdd', u'r-97874ce1'] are [u'running', u'running']
+All instances now running
+Deployment state changed to: INSTANCES_LAUNCHED
+Instances Launched
+Contextualizing Instances
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "echo -e \"10.58.158.51
+10.58.221.244\" > /tmp/d2c.context"
+Warning: Permanently added 'ec2-46-137-21-99.eu-west-1.compute.amazonaws.com,46.137.21.99' (RSA) to the list of known hosts.
+
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-51-144-229.eu-west-1.compute.amazonaws.com "echo -e \"10.58.158.51
+10.58.221.244\" > /tmp/d2c.context"
+Warning: Permanently added 'ec2-46-51-144-229.eu-west-1.compute.amazonaws.com,46.51.144.229' (RSA) to the list of known hosts.
+
+Deployment state changed to: ROLES_CONTEXTUALIZED
+Instances Contextualized
+Starting roles
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "echo -e \"Host *
+   StrictHostKeyChecking no\" > .ssh/config"
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "nohup sh -c \"mpirun -np 8 -hostfile /tmp/d2c.context -leave-session-attached gpaw-python /home/dirac/amAu111BF4/22vdw.py 2>&1 > experiment.out; date > /tmp/done.txt\" &>/tmp/hup.4613.out < /dev/null &"
+Deployment state changed to: ROLES_STARTED
+Roles started
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Returning true for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning False for finished test
+Monitor role len is 1
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+Returning true for finished test
+Monitor role len is 0
+Deployment state changed to: JOB_COMPLETED
+Stopping roles
+Deployment state changed to: INSTANCES_STOPPED
+Roles stopped
+Deployment state changed to: COLLECTING_DATA
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com:/home/dirac ./results/master/home_dir/i-47119431/dirac
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com:/tmp ./results/master/tmp/i-47119431/tmp
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-137-21-99.eu-west-1.compute.amazonaws.com:/opt/collectd/var/lib/collectd ./results/master/collectd_stats/i-47119431/collectd
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-51-144-229.eu-west-1.compute.amazonaws.com:/home/dirac ./results/slave/home_dir/i-43119435/dirac
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-46-51-144-229.eu-west-1.compute.amazonaws.com:/opt/collectd/var/lib/collectd ./results/slave/collectd_stats/i-43119435/collectd
+Deployment state changed to: DATA_COLLECTED
+Deployment state changed to: SHUTTING_DOWN
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = terminated
+Reservation r-ab874cdd terminated
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = terminated
+Reservation r-97874ce1 terminated
+Deployment state changed to: COMPLETED

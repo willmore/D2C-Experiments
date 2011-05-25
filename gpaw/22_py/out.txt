@@ -1,0 +1,65 @@
+nohup: ignoring input
+test123
+Deployment state changed to: LAUNCHING_INSTANCES
+Launching instances
+Roles = [<d2c.model.Role.Role instance at 0x7fe007d96440>]
+Reserving 1 instance(s) of ami-1396a167
+Initiating connection to ec2 region 'eu-west-1'...
+EC2 connection established
+Instance(s) reserved
+Getting instances states for reservation-id(s): [u'r-f35f9685']
+Got reservations: [Reservation:r-f35f9685]
+Instance states for reservations [u'r-f35f9685'] are [u'pending']
+All instances not running; continue polling.
+All instances now running
+Getting instances states for reservation-id(s): [u'r-f35f9685']
+Got reservations: [Reservation:r-f35f9685]
+Instance states for reservations [u'r-f35f9685'] are [u'pending']
+All instances not running; continue polling.
+All instances now running
+Getting instances states for reservation-id(s): [u'r-f35f9685']
+Got reservations: [Reservation:r-f35f9685]
+Instance states for reservations [u'r-f35f9685'] are [u'running']
+All instances now running
+Deployment state changed to: INSTANCES_LAUNCHED
+Instances Launched
+Contextualizing Instances
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-79-125-91-64.eu-west-1.compute.amazonaws.com 'echo -e "10.58.189.61" > /tmp/d2c.context'
+Warning: Permanently added 'ec2-79-125-91-64.eu-west-1.compute.amazonaws.com,79.125.91.64' (RSA) to the list of known hosts.
+
+Deployment state changed to: ROLES_CONTEXTUALIZED
+Instances Contextualized
+Starting roles
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-79-125-91-64.eu-west-1.compute.amazonaws.com 'nohup mpirun -np 4 -hostfile /tmp/d2c.context gpaw-python /home/dirac/amAu111BF4/22.py &> experiment.out || true && date > /tmp/done.txt &'
+Deployment state changed to: ROLES_STARTED
+Roles started
+Executing: ssh -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-79-125-91-64.eu-west-1.compute.amazonaws.com 'if [ -f /tmp/done.txt ]; then echo exists; fi'
+Returning true for finished test
+Monitor role len is 0
+Deployment state changed to: JOB_COMPLETED
+Stopping roles
+Deployment state changed to: INSTANCES_STOPPED
+Roles stopped
+Deployment state changed to: COLLECTING_DATA
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-79-125-91-64.eu-west-1.compute.amazonaws.com:/home/dirac ./master/home_dir/i-5fba0029/dirac
+Executing: scp -r -i /home/willmore/dirac.id_rsa -o StrictHostKeyChecking=no dirac@ec2-79-125-91-64.eu-west-1.compute.amazonaws.com:/opt/collectd/var/lib/collectd ./master/collectd_stats/i-5fba0029/collectd
+Deployment state changed to: DATA_COLLECTED
+Deployment state changed to: SHUTTING_DOWN
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = shutting-down
+Shutdown monitor length = 1
+Instance state = terminated
+Reservation r-f35f9685 terminated
+Deployment state changed to: COMPLETED

@@ -1,0 +1,38 @@
+BFGS:   0  23:50:34      -55.189128       3.1180
+Traceback (most recent call last):
+  File "/home/dirac/amAu111BF4/22.py", line 31, in <module>
+    qn.run(fmax=0.05)
+  File "/usr/lib/python2.6/dist-packages/ase/optimize/optimize.py", line 114, in run
+    f = self.atoms.get_forces()
+  File "/usr/lib/python2.6/dist-packages/ase/atoms.py", line 536, in get_forces
+    forces = self.calc.get_forces(self)
+  File "/usr/lib/python2.6/dist-packages/gpaw/aseinterface.py", line 61, in get_forces
+    force_call_to_set_positions=force_call_to_set_positions)
+  File "/usr/lib/python2.6/dist-packages/gpaw/paw.py", line 265, in calculate
+    self.occupations):
+  File "/usr/lib/python2.6/dist-packages/gpaw/scf.py", line 46, in run
+    wfs.eigensolver.iterate(hamiltonian, wfs)
+  File "/usr/lib/python2.6/dist-packages/gpaw/eigensolvers/eigensolver.py", line 71, in iterate
+    wfs.orthonormalize()
+  File "/usr/lib/python2.6/dist-packages/gpaw/wavefunctions/fdpw.py", line 190, in orthonormalize
+    self.overlap.orthonormalize(self, kpt)
+  File "/usr/lib/python2.6/dist-packages/gpaw/overlap.py", line 76, in orthonormalize
+    self.ksl.inverse_cholesky(S_nn)
+  File "/usr/lib/python2.6/dist-packages/gpaw/blacs.py", line 620, in inverse_cholesky
+    raise RuntimeError('Failed to orthogonalize: %d' % info)
+RuntimeError: Failed to orthogonalize: 1
+GPAW CLEANUP (node 0): <type 'exceptions.RuntimeError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 0 in communicator MPI_COMM_WORLD 
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 0 with PID 752 on
+node dirac exiting without calling "finalize". This may
+have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+--------------------------------------------------------------------------

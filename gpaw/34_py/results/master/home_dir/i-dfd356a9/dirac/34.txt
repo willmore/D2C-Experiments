@@ -1,0 +1,322 @@
+
+  ___ ___ ___ _ _ _  
+ |   |   |_  | | | | 
+ | | | | | . | | | | 
+ |__ |  _|___|_____|  0.7.2.6974
+ |___|_|             
+
+User: dirac@dirac
+Date: Mon May  2 17:10:56 2011
+Arch: x86_64
+Pid:  765
+Dir:  /usr/lib/python2.6/dist-packages/gpaw
+ase:   /usr/lib/python2.6/dist-packages/ase  version:  3.4.1
+numpy: /usr/lib/python2.6/dist-packages/numpy
+units: Angstrom and eV
+
+Memory estimate
+---------------
+Calculator  1195.85 MiB
+    Initial overhead  105.45 MiB
+    Density  21.94 MiB
+        Arrays  3.91 MiB
+        Localized functions  12.86 MiB
+        Mixer  0.90 MiB
+        Interpolator  4.28 MiB
+    Hamiltonian  27.76 MiB
+        Arrays  2.56 MiB
+        Restrictor  2.72 MiB
+        XC 3D grid  11.25 MiB
+        Poisson  10.28 MiB
+        vbar  0.96 MiB
+    Wavefunctions  1040.70 MiB
+        Arrays psit_nG  827.75 MiB
+        Eigensolver  104.98 MiB
+        Projectors  2.15 MiB
+        Overlap op  105.27 MiB
+        Kinetic operator  0.55 MiB
+
+Positions:
+  0 Au    1.4425    0.8328   12.0000
+  1 Au    4.3275    0.8328   12.0000
+  2 Au    7.2125    0.8328   12.0000
+  3 Au    0.0000    3.3313   12.0000
+  4 Au    2.8850    3.3313   12.0000
+  5 Au    5.7700    3.3313   12.0000
+  6 Au    1.4425    5.8298   12.0000
+  7 Au    4.3275    5.8298   12.0000
+  8 Au    7.2125    5.8298   12.0000
+  9 Au    0.0000    8.3283   12.0000
+ 10 Au    2.8850    8.3283   12.0000
+ 11 Au    5.7700    8.3283   12.0000
+ 12 Au    0.0000    1.6657   14.3556
+ 13 Au    2.8850    1.6657   14.3556
+ 14 Au    5.7700    1.6657   14.3556
+ 15 Au    1.4425    4.1641   14.3556
+ 16 Au    4.3275    4.1641   14.3556
+ 17 Au    7.2125    4.1641   14.3556
+ 18 Au    0.0000    6.6626   14.3556
+ 19 Au    2.8850    6.6626   14.3556
+ 20 Au    5.7700    6.6626   14.3556
+ 21 Au    1.4425    9.1611   14.3556
+ 22 Au    4.3275    9.1611   14.3556
+ 23 Au    7.2125    9.1611   14.3556
+ 24 Au    0.0000    0.0000   16.7112
+ 25 Au    2.8850    0.0000   16.7112
+ 26 Au    5.7700    0.0000   16.7112
+ 27 Au    1.4425    2.4985   16.7112
+ 28 Au    4.3275    2.4985   16.7112
+ 29 Au    7.2125    2.4985   16.7112
+ 30 Au    0.0000    4.9970   16.7112
+ 31 Au    2.8850    4.9970   16.7112
+ 32 Au    5.7700    4.9970   16.7112
+ 33 Au    1.4425    7.4954   16.7112
+ 34 Au    4.3275    7.4954   16.7112
+ 35 Au    7.2125    7.4954   16.7112
+ 36 B     2.8850    1.6657   22.3556
+ 37 F     4.0164    2.3189   21.8937
+ 38 F     1.7536    2.3189   21.8937
+ 39 F     2.8850    0.3593   21.8937
+ 40 F     2.8850    1.6657   23.7412
+
+       .--------------------.  
+      /|                    |  
+     / |                    |  
+    /  |                    |  
+   /   |                    |  
+  /    |                    |  
+ *     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     | F                  |  
+ |     |                    |  
+ |     F B  F               |  
+ |     |F                   |  
+ |     |                    |  
+ |     | Au     Au     Au   |  
+ |     |                    |  
+ |  Au |  AAu    AAu    Au  |  
+ |   AAu    AAu    AAu      |  
+ |     |                    |  
+ Au   AAAu   AAAu   AAu     |  
+ |     |                    |  
+ |Au   |AAu    AAu    Au    |  
+ | Au  |  Au     Au         |  
+ |     |                    |  
+ |   Au|    Au     Au       |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     |                    |  
+ |     .--------------------.  
+ |    /                    /   
+ |   /                    /    
+ |  /                    /     
+ | /                    /      
+ |/                    /       
+ *--------------------*        
+
+Unit Cell:
+           Periodic     X           Y           Z      Points  Spacing
+  --------------------------------------------------------------------
+  1. axis:    yes    8.654987    0.000000    0.000000    56     0.1546
+  2. axis:    yes    0.000000    9.993918    0.000000    64     0.1562
+  3. axis:    no     0.000000    0.000000   28.711178   180     0.1595
+
+Au-setup:
+  name   : Gold
+  id     : f729301af73151f9133db6f6e28f92a1
+  Z      : 79
+  valence: 11
+  core   : 68
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/Au.RPBE.gz
+  cutoffs: 1.32(comp), 2.33(filt), 2.81(core), lmax=2
+  valence states:
+            energy   radius
+    6s(1)   -5.611   1.323
+    6p(0)   -0.793   1.323
+    5d(10)  -6.824   1.323
+    *s      21.600   1.323
+    *p      26.419   1.323
+    *d      20.388   1.323
+
+Using partial waves for Au as LCAO basis
+
+B-setup:
+  name   : Boron
+  id     : 4c085ebb9e6144015c26e053032a3a9b
+  Z      : 5
+  valence: 3
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/B.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 1.38(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)   -9.489   0.635
+    2p(1)   -3.587   0.635
+    *s      17.723   0.635
+    *p      23.625   0.635
+    *d       0.000   0.635
+
+Using partial waves for B as LCAO basis
+
+F-setup:
+  name   : Fluorine
+  id     : 96d5c0c6d5d6dd1db009b0a4cc47c564
+  Z      : 9
+  valence: 7
+  core   : 2
+  charge : 0.0
+  file   : /usr/share/gpaw-setups/F.RPBE.gz
+  cutoffs: 0.64(comp), 1.14(filt), 0.74(core), lmax=2
+  valence states:
+            energy   radius
+    2s(2)  -29.979   0.635
+    2p(5)  -11.057   0.635
+    *s      -2.768   0.635
+    *p      16.154   0.635
+    *d       0.000   0.635
+
+Using partial waves for F as LCAO basis
+
+Using the RPBE Exchange-Correlation Functional.
+Spin-Paired Calculation
+Total Charge:      0.000000
+Fermi Temperature: 0.100000
+Mode: Finite-difference
+Eigensolver:       rmm-diis
+                   (3 nearest neighbors central finite-difference stencil)
+Poisson Solver:    Jacobi 
+                   (3 nearest neighbors central finite-difference stencil)
+Interpolation:     6th Order
+Reference Energy:  -18609609.638680
+
+Total number of cores used: 32
+Domain Decomposition: 2 x 2 x 8
+Diagonalizer layout: Serial LAPACK
+Orthonormalizer layout: Serial LAPACK
+
+Symmetries present: 1
+8 k-points in the Irreducible Part of the Brillouin Zone (total: 16)
+Linear Mixing Parameter:           0.1
+Pulay Mixing with 3 Old Densities
+Damping of Long Wave Oscillations: 50
+
+Convergence Criteria:
+Total Energy Change per Atom:           0.001 eV / atom
+Integral of Absolute Density Change:    0.0001 electrons
+Integral of Absolute Eigenstate Change: 1e-09
+Number of Bands in Calculation:         344
+Bands to Converge:                      Occupied States Only
+Number of Valence Electrons:            427
+                     log10-error:    Total        Iterations:
+           Time      WFS    Density  Energy       Fermi  Poisson
+iter:   1  18:55:25  +1.4            -105.43619   2      742    
+iter:   2  20:01:43  -1.5            -124.39720   3             
+iter:   3  21:07:37  -1.9            -127.92506   2             
+iter:   4  22:33:32  -2.2   -1.3     -121.39685   12     441    
+iter:   5  00:03:39  -1.4   -1.4     -111.26545   26     550    
+iter:   6  01:19:52  -2.4   -1.8     -112.75382   5      220    
+iter:   7  02:39:40  -3.0   -1.8     -113.23812   4      319    
+iter:   8  03:57:55  -3.9   -1.9     -113.02629   4      264    
+iter:   9  05:25:19  -2.9   -1.9     -121.64558   5      483    
+iter:  10  06:33:24  -3.8   -1.5     -121.44683   3      29     
+iter:  11  08:00:38  -3.0   -1.5     -112.79656   5      462    
+iter:  12  09:12:45  -4.1   -2.0     -112.80115   3      130    
+iter:  13  10:31:54  -3.6   -2.1     -112.88977   3      290    
+iter:  14  11:47:11  -4.4   -2.2     -112.80839   3      202    
+iter:  15  13:04:50  -4.5   -2.1     -112.87478   3      240    
+iter:  16  14:16:54  -4.2   -2.1     -112.85185   2      120    
+iter:  17  15:30:47  -4.1   -2.3     -112.96959   3      158    
+iter:  18  16:46:36  -4.1   -2.3     -112.78314   3      217    
+iter:  19  17:59:07  -4.9   -2.9     -112.80417   3      124    
+iter:  20  19:07:53  -5.3   -2.9     -112.80720   2      41     
+iter:  21  20:16:48  -5.8   -3.0     -112.79664   3      47     
+iter:  22  21:26:02  -5.7   -3.0     -112.80306   2      63     
+iter:  23  22:34:51  -4.8   -3.1     -112.78163   3      57     
+iter:  24  23:44:40  -5.1   -3.5     -112.78480   3      73     
+iter:  25  00:51:53  -5.5   -3.5     -112.78152   3      21     
+iter:  26  01:59:28  -6.1   -3.5     -112.78569   2      22     
+iter:  27  03:06:26  -6.4   -3.6     -112.78414   2      25     
+iter:  28  04:12:56  -6.2   -3.7     -112.78567   2      5      
+iter:  29  05:20:01  -6.5   -3.8     -112.78683   2      4      
+iter:  30  06:26:09  -6.6   -3.8     -112.78315   2      5      
+iter:  31  07:32:34  -7.1   -4.0     -112.78078   2      8      
+iter:  32  08:39:17  -7.2   -4.1     -112.78022   2      5      
+iter:  33  09:45:35  -7.7   -4.1     -112.78108   2      3      
+iter:  34  10:53:07  -8.0   -4.2     -112.78390   2      4      
+iter:  35  11:59:22  -8.4   -4.4     -112.78413   2      3      
+iter:  36  13:05:33  -8.6   -4.4     -112.78476   2      3      
+iter:  37  14:11:42  -8.8   -4.5     -112.78486   2      3      
+iter:  38  15:17:11  -9.0   -4.6     -112.78463   1      3      
+------------------------------------
+Converged After 38 Iterations.
+
+Energy Contributions Relative to Reference Atoms:(reference = -18609609.63868)
+-------------------------
+Kinetic:       -239.22854
+Potential:     +179.79700
+External:        +0.00000
+XC:             -59.89886
+Entropy (-ST):   -0.45183
+Local:           +6.77169
+-------------------------
+Free Energy:   -113.01054
+Zero Kelvin:   -112.78463
+
+Fermi Level: -7.43242
+
+
+Total Charge:  -0.000000 electrons
+Dipole Moment: [-8.8188288  -8.96087924 -3.18839639]
+
+Forces in eV/Ang:
+  0 Au   -0.03719   -0.05154   -0.71804
+  1 Au   -0.00001    0.04369   -0.68774
+  2 Au    0.03721   -0.05136   -0.71768
+  3 Au    0.00007    0.04297   -0.68809
+  4 Au    0.03721   -0.05224   -0.71833
+  5 Au   -0.03728   -0.05226   -0.71839
+  6 Au   -0.03698   -0.05243   -0.71913
+  7 Au   -0.00023    0.04280   -0.68883
+  8 Au    0.03720   -0.05221   -0.71949
+  9 Au    0.00019    0.04380   -0.68866
+ 10 Au    0.03720   -0.05180   -0.71902
+ 11 Au   -0.03739   -0.05143   -0.71896
+ 12 Au    0.00031   -0.06141    0.01648
+ 13 Au    0.01473    0.04654    0.02000
+ 14 Au   -0.01503    0.04657    0.01634
+ 15 Au   -0.01457    0.04636    0.01542
+ 16 Au   -0.00016   -0.06162    0.01555
+ 17 Au    0.01472    0.04666    0.01289
+ 18 Au    0.00009   -0.06096    0.01081
+ 19 Au    0.01472    0.04695    0.01248
+ 20 Au   -0.01480    0.04701    0.01068
+ 21 Au   -0.01448    0.04699    0.01521
+ 22 Au   -0.00025   -0.06098    0.01535
+ 23 Au    0.01472    0.04678    0.01231
+ 24 Au   -0.00021    0.00405    0.68643
+ 25 Au   -0.05657    0.00364    0.73946
+ 26 Au    0.05676    0.00403    0.73172
+ 27 Au    0.05629    0.00396    0.73972
+ 28 Au    0.00028    0.00398    0.69442
+ 29 Au   -0.05655    0.00426    0.73177
+ 30 Au   -0.00030    0.00405    0.68513
+ 31 Au   -0.05655    0.00385    0.73185
+ 32 Au    0.05684    0.00403    0.73042
+ 33 Au    0.05642    0.00355    0.73021
+ 34 Au    0.00013    0.00356    0.68491
+ 35 Au   -0.05654    0.00398    0.72911
+ 36 B    -0.00162   -0.00385    0.24177
+ 37 F     1.22786    0.64226   -0.59471
+ 38 F    -1.26894    0.75267   -0.59503
+ 39 F    -0.02331   -1.38019   -0.55884
+ 40 F    -0.01710   -0.01547    1.34403

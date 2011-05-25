@@ -1,0 +1,39 @@
+Warning: Permanently added '10.58.221.244' (RSA) to the list of known hosts.
+Traceback (most recent call last):
+  File "/home/dirac/amAu111BF4/22vdw.py", line 31, in <module>
+    qn.run(fmax=0.05)
+  File "/usr/lib/python2.6/dist-packages/ase/optimize/optimize.py", line 114, in run
+    f = self.atoms.get_forces()
+  File "/usr/lib/python2.6/dist-packages/ase/atoms.py", line 536, in get_forces
+    forces = self.calc.get_forces(self)
+  File "/usr/lib/python2.6/dist-packages/gpaw/aseinterface.py", line 61, in get_forces
+    force_call_to_set_positions=force_call_to_set_positions)
+  File "/usr/lib/python2.6/dist-packages/gpaw/paw.py", line 265, in calculate
+    self.occupations):
+  File "/usr/lib/python2.6/dist-packages/gpaw/scf.py", line 59, in run
+    density.update(wfs)
+  File "/usr/lib/python2.6/dist-packages/gpaw/density.py", line 164, in update
+    wfs.calculate_atomic_density_matrices(self.D_asp)
+  File "/usr/lib/python2.6/dist-packages/gpaw/wavefunctions/base.py", line 188, in calculate_atomic_density_matrices
+    self.calculate_atomic_density_matrices_with_occupation(D_asp, f_un)
+  File "/usr/lib/python2.6/dist-packages/gpaw/wavefunctions/base.py", line 200, in calculate_atomic_density_matrices_with_occupation
+    D_sp[:] = [pack(D_ii) for D_ii in D_sii]
+  File "/usr/lib/python2.6/dist-packages/gpaw/utilities/__init__.py", line 217, in pack
+    assert error < tolerance, 'Pack not symmetric by %s' % error + ' %'
+AssertionError: Pack not symmetric by nan %
+GPAW CLEANUP (node 4): <type 'exceptions.AssertionError'> occurred.  Calling MPI_Abort!
+--------------------------------------------------------------------------
+MPI_ABORT was invoked on rank 4 in communicator MPI_COMM_WORLD 
+with errorcode 42.
+
+NOTE: invoking MPI_ABORT causes Open MPI to kill all MPI processes.
+You may or may not see output from other processes, depending on
+exactly when Open MPI kills them.
+--------------------------------------------------------------------------
+--------------------------------------------------------------------------
+mpirun has exited due to process rank 4 with PID 743 on
+node dirac exiting without calling "finalize". This may
+have caused other processes in the application to be
+terminated by signals sent by mpirun (as reported here).
+--------------------------------------------------------------------------
+[dirac][[37873,1],3][../../../../../../ompi/mca/btl/tcp/btl_tcp_frag.c:216:mca_btl_tcp_frag_recv] mca_btl_tcp_frag_recv: readv failed: Connection reset by peer (104)
