@@ -1,0 +1,1437 @@
+nohup: ignoring input
+Deployment state changed to: LAUNCHING_INSTANCES
+[1306692246] Launching instances
+[1306692246] Initiating connection to ec2 region 'eu-west-1'...
+[1306692247] EC2 connection established
+[1306692247] Reserving 1 instance(s) of ami-295e685d with launchKey None
+[1306692249] Instance(s) reserved
+[1306692279] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692279] Got reservations: [Reservation:r-9c9033ea]
+[1306692279] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692279] All instances not running; continue polling.
+[1306692309] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692309] Got reservations: [Reservation:r-9c9033ea]
+[1306692309] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692309] All instances not running; continue polling.
+[1306692339] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692339] Got reservations: [Reservation:r-9c9033ea]
+[1306692339] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692339] All instances not running; continue polling.
+[1306692369] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692370] Got reservations: [Reservation:r-9c9033ea]
+[1306692370] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692370] All instances not running; continue polling.
+[1306692400] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692400] Got reservations: [Reservation:r-9c9033ea]
+[1306692400] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692400] All instances not running; continue polling.
+[1306692430] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692430] Got reservations: [Reservation:r-9c9033ea]
+[1306692430] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692430] All instances not running; continue polling.
+[1306692460] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692460] Got reservations: [Reservation:r-9c9033ea]
+[1306692460] Instance states for reservations [u'r-9c9033ea'] are [u'pending']
+[1306692460] All instances not running; continue polling.
+[1306692490] Getting instances states for reservation-id(s): [u'r-9c9033ea']
+[1306692491] Got reservations: [Reservation:r-9c9033ea]
+[1306692491] Instance states for reservations [u'r-9c9033ea'] are [u'running']
+[1306692491] All instances now running
+Deployment state changed to: INSTANCES_LAUNCHED
+[1306692521] Instances Launched
+[1306692521] Contextualizing Instances
+[1306692521] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "echo -e \"10.230.61.115\" > /tmp/d2c.context"
+[1306692521] Warning: Permanently added 'ec2-46-51-146-185.eu-west-1.compute.amazonaws.com,46.51.146.185' (RSA) to the list of known hosts.
+
+Deployment state changed to: ROLES_CONTEXTUALIZED
+[1306692522] Instances Contextualized
+[1306692522] Starting roles
+[1306692523] Executing: scp -i /home/willmore/.ssh/id_rsa_nopw ./input/hpccinf.txt hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com:/home/hpcc-user/hpccinf.txt
+[1306692524] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "nohup sh -c \"mpirun -np 2 hpcc /home/hpcc-user/hpccinf.txt > experiment.out 2>&1; date > /tmp/done.txt\" &>/tmp/hup.221.out < /dev/null &"
+Deployment state changed to: ROLES_STARTED
+[1306692525] Roles started
+[1306692525] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692526] Returning False for finished test
+[1306692526] Monitor role len is 1
+[1306692556] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692558] Returning False for finished test
+[1306692558] Monitor role len is 1
+[1306692588] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692589] Returning False for finished test
+[1306692589] Monitor role len is 1
+[1306692619] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692621] Returning False for finished test
+[1306692621] Monitor role len is 1
+[1306692651] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692653] Returning False for finished test
+[1306692653] Monitor role len is 1
+[1306692683] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692684] Returning False for finished test
+[1306692684] Monitor role len is 1
+[1306692714] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692716] Returning False for finished test
+[1306692716] Monitor role len is 1
+[1306692746] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692748] Returning False for finished test
+[1306692748] Monitor role len is 1
+[1306692778] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692779] Returning False for finished test
+[1306692779] Monitor role len is 1
+[1306692809] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692811] Returning False for finished test
+[1306692811] Monitor role len is 1
+[1306692841] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692843] Returning False for finished test
+[1306692843] Monitor role len is 1
+[1306692873] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692875] Returning False for finished test
+[1306692875] Monitor role len is 1
+[1306692905] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692906] Returning False for finished test
+[1306692906] Monitor role len is 1
+[1306692936] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692938] Returning False for finished test
+[1306692938] Monitor role len is 1
+[1306692968] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306692970] Returning False for finished test
+[1306692970] Monitor role len is 1
+[1306693000] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693001] Returning False for finished test
+[1306693001] Monitor role len is 1
+[1306693031] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693033] Returning False for finished test
+[1306693033] Monitor role len is 1
+[1306693063] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693065] Returning False for finished test
+[1306693065] Monitor role len is 1
+[1306693095] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693096] Returning False for finished test
+[1306693096] Monitor role len is 1
+[1306693126] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693169] Returning False for finished test
+[1306693169] Monitor role len is 1
+[1306693200] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693201] Returning False for finished test
+[1306693201] Monitor role len is 1
+[1306693231] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693233] Returning False for finished test
+[1306693233] Monitor role len is 1
+[1306693263] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693264] Returning False for finished test
+[1306693264] Monitor role len is 1
+[1306693294] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693296] Returning False for finished test
+[1306693296] Monitor role len is 1
+[1306693326] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693327] Returning False for finished test
+[1306693327] Monitor role len is 1
+[1306693357] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693359] Returning False for finished test
+[1306693359] Monitor role len is 1
+[1306693389] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693391] Returning False for finished test
+[1306693391] Monitor role len is 1
+[1306693421] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693422] Returning False for finished test
+[1306693422] Monitor role len is 1
+[1306693452] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693454] Returning False for finished test
+[1306693454] Monitor role len is 1
+[1306693484] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693486] Returning False for finished test
+[1306693486] Monitor role len is 1
+[1306693516] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693517] Returning False for finished test
+[1306693517] Monitor role len is 1
+[1306693547] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693549] Returning False for finished test
+[1306693549] Monitor role len is 1
+[1306693579] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693580] Returning False for finished test
+[1306693580] Monitor role len is 1
+[1306693610] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693612] Returning False for finished test
+[1306693612] Monitor role len is 1
+[1306693642] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693644] Returning False for finished test
+[1306693644] Monitor role len is 1
+[1306693674] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693675] Returning False for finished test
+[1306693675] Monitor role len is 1
+[1306693705] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693707] Returning False for finished test
+[1306693707] Monitor role len is 1
+[1306693737] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693738] Returning False for finished test
+[1306693738] Monitor role len is 1
+[1306693768] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693770] Returning False for finished test
+[1306693770] Monitor role len is 1
+[1306693800] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693801] Returning False for finished test
+[1306693801] Monitor role len is 1
+[1306693831] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693832] Returning False for finished test
+[1306693832] Monitor role len is 1
+[1306693862] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693864] Returning False for finished test
+[1306693864] Monitor role len is 1
+[1306693894] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693896] Returning False for finished test
+[1306693896] Monitor role len is 1
+[1306693926] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693927] Returning False for finished test
+[1306693927] Monitor role len is 1
+[1306693957] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693959] Returning False for finished test
+[1306693959] Monitor role len is 1
+[1306693989] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306693990] Returning False for finished test
+[1306693990] Monitor role len is 1
+[1306694020] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694022] Returning False for finished test
+[1306694022] Monitor role len is 1
+[1306694052] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694054] Returning False for finished test
+[1306694054] Monitor role len is 1
+[1306694084] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694085] Returning False for finished test
+[1306694085] Monitor role len is 1
+[1306694115] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694117] Returning False for finished test
+[1306694117] Monitor role len is 1
+[1306694147] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694148] Returning False for finished test
+[1306694148] Monitor role len is 1
+[1306694178] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694180] Returning False for finished test
+[1306694180] Monitor role len is 1
+[1306694210] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694212] Returning False for finished test
+[1306694212] Monitor role len is 1
+[1306694242] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694243] Returning False for finished test
+[1306694243] Monitor role len is 1
+[1306694273] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694275] Returning False for finished test
+[1306694275] Monitor role len is 1
+[1306694305] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694306] Returning False for finished test
+[1306694306] Monitor role len is 1
+[1306694336] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694338] Returning False for finished test
+[1306694338] Monitor role len is 1
+[1306694368] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694370] Returning False for finished test
+[1306694370] Monitor role len is 1
+[1306694400] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694401] Returning False for finished test
+[1306694401] Monitor role len is 1
+[1306694431] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694432] Returning False for finished test
+[1306694432] Monitor role len is 1
+[1306694462] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694464] Returning False for finished test
+[1306694464] Monitor role len is 1
+[1306694494] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694496] Returning False for finished test
+[1306694496] Monitor role len is 1
+[1306694526] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694527] Returning False for finished test
+[1306694527] Monitor role len is 1
+[1306694557] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694559] Returning False for finished test
+[1306694559] Monitor role len is 1
+[1306694589] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694590] Returning False for finished test
+[1306694590] Monitor role len is 1
+[1306694621] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694622] Returning False for finished test
+[1306694622] Monitor role len is 1
+[1306694652] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694654] Returning False for finished test
+[1306694654] Monitor role len is 1
+[1306694684] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694685] Returning False for finished test
+[1306694685] Monitor role len is 1
+[1306694715] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694717] Returning False for finished test
+[1306694717] Monitor role len is 1
+[1306694747] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694748] Returning False for finished test
+[1306694748] Monitor role len is 1
+[1306694778] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694780] Returning False for finished test
+[1306694780] Monitor role len is 1
+[1306694810] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694812] Returning False for finished test
+[1306694812] Monitor role len is 1
+[1306694842] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694843] Returning False for finished test
+[1306694843] Monitor role len is 1
+[1306694873] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694875] Returning False for finished test
+[1306694875] Monitor role len is 1
+[1306694905] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694906] Returning False for finished test
+[1306694906] Monitor role len is 1
+[1306694936] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694938] Returning False for finished test
+[1306694938] Monitor role len is 1
+[1306694968] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306694970] Returning False for finished test
+[1306694970] Monitor role len is 1
+[1306695000] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695001] Returning False for finished test
+[1306695001] Monitor role len is 1
+[1306695031] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695033] Returning False for finished test
+[1306695033] Monitor role len is 1
+[1306695063] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695064] Returning False for finished test
+[1306695064] Monitor role len is 1
+[1306695094] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695096] Returning False for finished test
+[1306695096] Monitor role len is 1
+[1306695126] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695128] Returning False for finished test
+[1306695128] Monitor role len is 1
+[1306695158] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695159] Returning False for finished test
+[1306695159] Monitor role len is 1
+[1306695189] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695191] Returning False for finished test
+[1306695191] Monitor role len is 1
+[1306695221] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695222] Returning False for finished test
+[1306695222] Monitor role len is 1
+[1306695252] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695254] Returning False for finished test
+[1306695254] Monitor role len is 1
+[1306695284] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695286] Returning False for finished test
+[1306695286] Monitor role len is 1
+[1306695316] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695317] Returning False for finished test
+[1306695317] Monitor role len is 1
+[1306695347] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695349] Returning False for finished test
+[1306695349] Monitor role len is 1
+[1306695379] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695380] Returning False for finished test
+[1306695380] Monitor role len is 1
+[1306695410] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695412] Returning False for finished test
+[1306695412] Monitor role len is 1
+[1306695442] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695443] Returning False for finished test
+[1306695443] Monitor role len is 1
+[1306695473] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695475] Returning False for finished test
+[1306695475] Monitor role len is 1
+[1306695505] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695506] Returning False for finished test
+[1306695506] Monitor role len is 1
+[1306695536] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695538] Returning False for finished test
+[1306695538] Monitor role len is 1
+[1306695568] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695569] Returning False for finished test
+[1306695569] Monitor role len is 1
+[1306695599] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695601] Returning False for finished test
+[1306695601] Monitor role len is 1
+[1306695631] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695633] Returning False for finished test
+[1306695633] Monitor role len is 1
+[1306695663] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695664] Returning False for finished test
+[1306695664] Monitor role len is 1
+[1306695694] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695696] Returning False for finished test
+[1306695696] Monitor role len is 1
+[1306695726] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695728] Returning False for finished test
+[1306695728] Monitor role len is 1
+[1306695758] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695759] Returning False for finished test
+[1306695759] Monitor role len is 1
+[1306695789] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695791] Returning False for finished test
+[1306695791] Monitor role len is 1
+[1306695821] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695822] Returning False for finished test
+[1306695822] Monitor role len is 1
+[1306695852] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695854] Returning False for finished test
+[1306695854] Monitor role len is 1
+[1306695884] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695886] Returning False for finished test
+[1306695886] Monitor role len is 1
+[1306695916] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695917] Returning False for finished test
+[1306695917] Monitor role len is 1
+[1306695947] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695949] Returning False for finished test
+[1306695949] Monitor role len is 1
+[1306695979] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306695980] Returning False for finished test
+[1306695980] Monitor role len is 1
+[1306696010] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696012] Returning False for finished test
+[1306696012] Monitor role len is 1
+[1306696042] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696044] Returning False for finished test
+[1306696044] Monitor role len is 1
+[1306696074] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696075] Returning False for finished test
+[1306696075] Monitor role len is 1
+[1306696105] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696107] Returning False for finished test
+[1306696107] Monitor role len is 1
+[1306696137] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696138] Returning False for finished test
+[1306696138] Monitor role len is 1
+[1306696169] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696170] Returning False for finished test
+[1306696170] Monitor role len is 1
+[1306696200] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696202] Returning False for finished test
+[1306696202] Monitor role len is 1
+[1306696232] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696234] Returning False for finished test
+[1306696234] Monitor role len is 1
+[1306696264] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696265] Returning False for finished test
+[1306696265] Monitor role len is 1
+[1306696295] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696297] Returning False for finished test
+[1306696297] Monitor role len is 1
+[1306696327] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696328] Returning False for finished test
+[1306696328] Monitor role len is 1
+[1306696359] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696360] Returning False for finished test
+[1306696360] Monitor role len is 1
+[1306696390] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696392] Returning False for finished test
+[1306696392] Monitor role len is 1
+[1306696422] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696423] Returning False for finished test
+[1306696423] Monitor role len is 1
+[1306696453] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696455] Returning False for finished test
+[1306696455] Monitor role len is 1
+[1306696485] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696486] Returning False for finished test
+[1306696486] Monitor role len is 1
+[1306696516] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696518] Returning False for finished test
+[1306696518] Monitor role len is 1
+[1306696548] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696549] Returning False for finished test
+[1306696549] Monitor role len is 1
+[1306696579] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696581] Returning False for finished test
+[1306696581] Monitor role len is 1
+[1306696611] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696612] Returning False for finished test
+[1306696612] Monitor role len is 1
+[1306696642] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696644] Returning False for finished test
+[1306696644] Monitor role len is 1
+[1306696674] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696676] Returning False for finished test
+[1306696676] Monitor role len is 1
+[1306696706] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696707] Returning False for finished test
+[1306696707] Monitor role len is 1
+[1306696737] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696739] Returning False for finished test
+[1306696739] Monitor role len is 1
+[1306696769] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696770] Returning False for finished test
+[1306696770] Monitor role len is 1
+[1306696800] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696802] Returning False for finished test
+[1306696802] Monitor role len is 1
+[1306696832] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696834] Returning False for finished test
+[1306696834] Monitor role len is 1
+[1306696864] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696865] Returning False for finished test
+[1306696865] Monitor role len is 1
+[1306696895] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696897] Returning False for finished test
+[1306696897] Monitor role len is 1
+[1306696927] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696928] Returning False for finished test
+[1306696928] Monitor role len is 1
+[1306696958] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696960] Returning False for finished test
+[1306696960] Monitor role len is 1
+[1306696990] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306696991] Returning False for finished test
+[1306696991] Monitor role len is 1
+[1306697021] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697023] Returning False for finished test
+[1306697023] Monitor role len is 1
+[1306697053] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697055] Returning False for finished test
+[1306697055] Monitor role len is 1
+[1306697085] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697086] Returning False for finished test
+[1306697086] Monitor role len is 1
+[1306697116] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697118] Returning False for finished test
+[1306697118] Monitor role len is 1
+[1306697148] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697149] Returning False for finished test
+[1306697149] Monitor role len is 1
+[1306697179] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697181] Returning False for finished test
+[1306697181] Monitor role len is 1
+[1306697211] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697212] Returning False for finished test
+[1306697212] Monitor role len is 1
+[1306697242] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697244] Returning False for finished test
+[1306697244] Monitor role len is 1
+[1306697274] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697275] Returning False for finished test
+[1306697275] Monitor role len is 1
+[1306697305] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697307] Returning False for finished test
+[1306697307] Monitor role len is 1
+[1306697337] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697339] Returning False for finished test
+[1306697339] Monitor role len is 1
+[1306697369] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697370] Returning False for finished test
+[1306697370] Monitor role len is 1
+[1306697400] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697402] Returning False for finished test
+[1306697402] Monitor role len is 1
+[1306697432] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697433] Returning False for finished test
+[1306697433] Monitor role len is 1
+[1306697463] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697465] Returning False for finished test
+[1306697465] Monitor role len is 1
+[1306697495] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697496] Returning False for finished test
+[1306697496] Monitor role len is 1
+[1306697526] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697528] Returning False for finished test
+[1306697528] Monitor role len is 1
+[1306697558] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697559] Returning False for finished test
+[1306697559] Monitor role len is 1
+[1306697589] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697591] Returning False for finished test
+[1306697591] Monitor role len is 1
+[1306697621] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697623] Returning False for finished test
+[1306697623] Monitor role len is 1
+[1306697653] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697654] Returning False for finished test
+[1306697654] Monitor role len is 1
+[1306697684] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697686] Returning False for finished test
+[1306697686] Monitor role len is 1
+[1306697716] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697717] Returning False for finished test
+[1306697717] Monitor role len is 1
+[1306697747] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697749] Returning False for finished test
+[1306697749] Monitor role len is 1
+[1306697779] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697780] Returning False for finished test
+[1306697780] Monitor role len is 1
+[1306697810] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697812] Returning False for finished test
+[1306697812] Monitor role len is 1
+[1306697842] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697843] Returning False for finished test
+[1306697843] Monitor role len is 1
+[1306697873] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697875] Returning False for finished test
+[1306697875] Monitor role len is 1
+[1306697905] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697907] Returning False for finished test
+[1306697907] Monitor role len is 1
+[1306697937] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697938] Returning False for finished test
+[1306697938] Monitor role len is 1
+[1306697968] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306697970] Returning False for finished test
+[1306697970] Monitor role len is 1
+[1306698000] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698001] Returning False for finished test
+[1306698001] Monitor role len is 1
+[1306698031] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698033] Returning False for finished test
+[1306698033] Monitor role len is 1
+[1306698063] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698064] Returning False for finished test
+[1306698064] Monitor role len is 1
+[1306698094] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698096] Returning False for finished test
+[1306698096] Monitor role len is 1
+[1306698126] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698127] Returning False for finished test
+[1306698127] Monitor role len is 1
+[1306698157] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698159] Returning False for finished test
+[1306698159] Monitor role len is 1
+[1306698189] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698190] Returning False for finished test
+[1306698190] Monitor role len is 1
+[1306698221] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698222] Returning False for finished test
+[1306698222] Monitor role len is 1
+[1306698252] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698254] Returning False for finished test
+[1306698254] Monitor role len is 1
+[1306698284] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698285] Returning False for finished test
+[1306698285] Monitor role len is 1
+[1306698315] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698317] Returning False for finished test
+[1306698317] Monitor role len is 1
+[1306698347] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698348] Returning False for finished test
+[1306698348] Monitor role len is 1
+[1306698378] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698380] Returning False for finished test
+[1306698380] Monitor role len is 1
+[1306698410] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698411] Returning False for finished test
+[1306698411] Monitor role len is 1
+[1306698441] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698443] Returning False for finished test
+[1306698443] Monitor role len is 1
+[1306698473] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698474] Returning False for finished test
+[1306698474] Monitor role len is 1
+[1306698504] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698506] Returning False for finished test
+[1306698506] Monitor role len is 1
+[1306698536] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698538] Returning False for finished test
+[1306698538] Monitor role len is 1
+[1306698568] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698569] Returning False for finished test
+[1306698569] Monitor role len is 1
+[1306698599] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698601] Returning False for finished test
+[1306698601] Monitor role len is 1
+[1306698631] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698632] Returning False for finished test
+[1306698632] Monitor role len is 1
+[1306698662] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698664] Returning False for finished test
+[1306698664] Monitor role len is 1
+[1306698694] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698695] Returning False for finished test
+[1306698695] Monitor role len is 1
+[1306698725] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698727] Returning False for finished test
+[1306698727] Monitor role len is 1
+[1306698757] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698759] Returning False for finished test
+[1306698759] Monitor role len is 1
+[1306698789] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698790] Returning False for finished test
+[1306698790] Monitor role len is 1
+[1306698820] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698822] Returning False for finished test
+[1306698822] Monitor role len is 1
+[1306698852] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698853] Returning False for finished test
+[1306698853] Monitor role len is 1
+[1306698883] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698885] Returning False for finished test
+[1306698885] Monitor role len is 1
+[1306698915] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698916] Returning False for finished test
+[1306698916] Monitor role len is 1
+[1306698946] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698948] Returning False for finished test
+[1306698948] Monitor role len is 1
+[1306698978] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306698979] Returning False for finished test
+[1306698979] Monitor role len is 1
+[1306699009] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699011] Returning False for finished test
+[1306699011] Monitor role len is 1
+[1306699041] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699042] Returning False for finished test
+[1306699042] Monitor role len is 1
+[1306699072] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699074] Returning False for finished test
+[1306699074] Monitor role len is 1
+[1306699104] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699106] Returning False for finished test
+[1306699106] Monitor role len is 1
+[1306699136] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699137] Returning False for finished test
+[1306699137] Monitor role len is 1
+[1306699167] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699169] Returning False for finished test
+[1306699169] Monitor role len is 1
+[1306699199] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699200] Returning False for finished test
+[1306699200] Monitor role len is 1
+[1306699230] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699232] Returning False for finished test
+[1306699232] Monitor role len is 1
+[1306699262] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699263] Returning False for finished test
+[1306699263] Monitor role len is 1
+[1306699293] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699295] Returning False for finished test
+[1306699295] Monitor role len is 1
+[1306699325] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699326] Returning False for finished test
+[1306699326] Monitor role len is 1
+[1306699356] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699358] Returning False for finished test
+[1306699358] Monitor role len is 1
+[1306699388] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699390] Returning False for finished test
+[1306699390] Monitor role len is 1
+[1306699420] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699421] Returning False for finished test
+[1306699421] Monitor role len is 1
+[1306699451] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699453] Returning False for finished test
+[1306699453] Monitor role len is 1
+[1306699483] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699484] Returning False for finished test
+[1306699484] Monitor role len is 1
+[1306699514] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699516] Returning False for finished test
+[1306699516] Monitor role len is 1
+[1306699546] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699547] Returning False for finished test
+[1306699547] Monitor role len is 1
+[1306699577] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699579] Returning False for finished test
+[1306699579] Monitor role len is 1
+[1306699609] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699610] Returning False for finished test
+[1306699610] Monitor role len is 1
+[1306699640] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699642] Returning False for finished test
+[1306699642] Monitor role len is 1
+[1306699672] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699674] Returning False for finished test
+[1306699674] Monitor role len is 1
+[1306699704] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699705] Returning False for finished test
+[1306699705] Monitor role len is 1
+[1306699735] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699737] Returning False for finished test
+[1306699737] Monitor role len is 1
+[1306699767] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699768] Returning False for finished test
+[1306699768] Monitor role len is 1
+[1306699798] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699800] Returning False for finished test
+[1306699800] Monitor role len is 1
+[1306699830] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699831] Returning False for finished test
+[1306699831] Monitor role len is 1
+[1306699861] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699863] Returning False for finished test
+[1306699863] Monitor role len is 1
+[1306699893] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699894] Returning False for finished test
+[1306699894] Monitor role len is 1
+[1306699925] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699926] Returning False for finished test
+[1306699926] Monitor role len is 1
+[1306699956] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699958] Returning False for finished test
+[1306699958] Monitor role len is 1
+[1306699988] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306699989] Returning False for finished test
+[1306699989] Monitor role len is 1
+[1306700019] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700021] Returning False for finished test
+[1306700021] Monitor role len is 1
+[1306700051] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700052] Returning False for finished test
+[1306700052] Monitor role len is 1
+[1306700082] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700084] Returning False for finished test
+[1306700084] Monitor role len is 1
+[1306700114] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700116] Returning False for finished test
+[1306700116] Monitor role len is 1
+[1306700146] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700147] Returning False for finished test
+[1306700147] Monitor role len is 1
+[1306700177] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700179] Returning False for finished test
+[1306700179] Monitor role len is 1
+[1306700209] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700210] Returning False for finished test
+[1306700210] Monitor role len is 1
+[1306700240] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700242] Returning False for finished test
+[1306700242] Monitor role len is 1
+[1306700272] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700273] Returning False for finished test
+[1306700273] Monitor role len is 1
+[1306700303] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700305] Returning False for finished test
+[1306700305] Monitor role len is 1
+[1306700335] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700336] Returning False for finished test
+[1306700336] Monitor role len is 1
+[1306700366] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700368] Returning False for finished test
+[1306700368] Monitor role len is 1
+[1306700398] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700400] Returning False for finished test
+[1306700400] Monitor role len is 1
+[1306700430] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700431] Returning False for finished test
+[1306700431] Monitor role len is 1
+[1306700461] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700463] Returning False for finished test
+[1306700463] Monitor role len is 1
+[1306700493] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700494] Returning False for finished test
+[1306700494] Monitor role len is 1
+[1306700524] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700526] Returning False for finished test
+[1306700526] Monitor role len is 1
+[1306700556] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700557] Returning False for finished test
+[1306700557] Monitor role len is 1
+[1306700587] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700589] Returning False for finished test
+[1306700589] Monitor role len is 1
+[1306700619] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700621] Returning False for finished test
+[1306700621] Monitor role len is 1
+[1306700651] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700652] Returning False for finished test
+[1306700652] Monitor role len is 1
+[1306700682] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700684] Returning False for finished test
+[1306700684] Monitor role len is 1
+[1306700714] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700715] Returning False for finished test
+[1306700715] Monitor role len is 1
+[1306700746] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700747] Returning False for finished test
+[1306700747] Monitor role len is 1
+[1306700777] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700779] Returning False for finished test
+[1306700779] Monitor role len is 1
+[1306700809] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700810] Returning False for finished test
+[1306700810] Monitor role len is 1
+[1306700840] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700842] Returning False for finished test
+[1306700842] Monitor role len is 1
+[1306700872] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700873] Returning False for finished test
+[1306700873] Monitor role len is 1
+[1306700903] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700905] Returning False for finished test
+[1306700905] Monitor role len is 1
+[1306700935] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700936] Returning False for finished test
+[1306700936] Monitor role len is 1
+[1306700966] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700968] Returning False for finished test
+[1306700968] Monitor role len is 1
+[1306700998] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306700999] Returning False for finished test
+[1306700999] Monitor role len is 1
+[1306701030] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701031] Returning False for finished test
+[1306701031] Monitor role len is 1
+[1306701061] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701063] Returning False for finished test
+[1306701063] Monitor role len is 1
+[1306701093] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701094] Returning False for finished test
+[1306701094] Monitor role len is 1
+[1306701124] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701126] Returning False for finished test
+[1306701126] Monitor role len is 1
+[1306701156] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701157] Returning False for finished test
+[1306701157] Monitor role len is 1
+[1306701187] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701189] Returning False for finished test
+[1306701189] Monitor role len is 1
+[1306701219] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701221] Returning False for finished test
+[1306701221] Monitor role len is 1
+[1306701251] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701252] Returning False for finished test
+[1306701252] Monitor role len is 1
+[1306701282] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701284] Returning False for finished test
+[1306701284] Monitor role len is 1
+[1306701314] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701315] Returning False for finished test
+[1306701315] Monitor role len is 1
+[1306701345] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701347] Returning False for finished test
+[1306701347] Monitor role len is 1
+[1306701377] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701378] Returning False for finished test
+[1306701378] Monitor role len is 1
+[1306701408] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701410] Returning False for finished test
+[1306701410] Monitor role len is 1
+[1306701440] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701441] Returning False for finished test
+[1306701441] Monitor role len is 1
+[1306701471] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701473] Returning False for finished test
+[1306701473] Monitor role len is 1
+[1306701503] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701505] Returning False for finished test
+[1306701505] Monitor role len is 1
+[1306701535] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701536] Returning False for finished test
+[1306701536] Monitor role len is 1
+[1306701566] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701568] Returning False for finished test
+[1306701568] Monitor role len is 1
+[1306701598] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701599] Returning False for finished test
+[1306701599] Monitor role len is 1
+[1306701629] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701631] Returning False for finished test
+[1306701631] Monitor role len is 1
+[1306701661] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701662] Returning False for finished test
+[1306701662] Monitor role len is 1
+[1306701692] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701694] Returning False for finished test
+[1306701694] Monitor role len is 1
+[1306701724] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701725] Returning False for finished test
+[1306701725] Monitor role len is 1
+[1306701756] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701757] Returning False for finished test
+[1306701757] Monitor role len is 1
+[1306701787] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701789] Returning False for finished test
+[1306701789] Monitor role len is 1
+[1306701819] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701820] Returning False for finished test
+[1306701820] Monitor role len is 1
+[1306701850] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701852] Returning False for finished test
+[1306701852] Monitor role len is 1
+[1306701882] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701883] Returning False for finished test
+[1306701883] Monitor role len is 1
+[1306701913] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701915] Returning False for finished test
+[1306701915] Monitor role len is 1
+[1306701945] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701946] Returning False for finished test
+[1306701946] Monitor role len is 1
+[1306701976] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306701978] Returning False for finished test
+[1306701978] Monitor role len is 1
+[1306702008] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702009] Returning False for finished test
+[1306702009] Monitor role len is 1
+[1306702040] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702041] Returning False for finished test
+[1306702041] Monitor role len is 1
+[1306702071] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702073] Returning False for finished test
+[1306702073] Monitor role len is 1
+[1306702103] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702104] Returning False for finished test
+[1306702104] Monitor role len is 1
+[1306702134] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702136] Returning False for finished test
+[1306702136] Monitor role len is 1
+[1306702166] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702167] Returning False for finished test
+[1306702167] Monitor role len is 1
+[1306702197] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702199] Returning False for finished test
+[1306702199] Monitor role len is 1
+[1306702229] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702230] Returning False for finished test
+[1306702230] Monitor role len is 1
+[1306702260] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702262] Returning False for finished test
+[1306702262] Monitor role len is 1
+[1306702292] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702294] Returning False for finished test
+[1306702294] Monitor role len is 1
+[1306702324] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702325] Returning False for finished test
+[1306702325] Monitor role len is 1
+[1306702355] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702357] Returning False for finished test
+[1306702357] Monitor role len is 1
+[1306702387] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702388] Returning False for finished test
+[1306702388] Monitor role len is 1
+[1306702418] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702420] Returning False for finished test
+[1306702420] Monitor role len is 1
+[1306702450] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702451] Returning False for finished test
+[1306702451] Monitor role len is 1
+[1306702481] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702483] Returning False for finished test
+[1306702483] Monitor role len is 1
+[1306702513] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702515] Returning False for finished test
+[1306702515] Monitor role len is 1
+[1306702545] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702546] Returning False for finished test
+[1306702546] Monitor role len is 1
+[1306702576] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702578] Returning False for finished test
+[1306702578] Monitor role len is 1
+[1306702608] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702609] Returning False for finished test
+[1306702609] Monitor role len is 1
+[1306702639] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702641] Returning False for finished test
+[1306702641] Monitor role len is 1
+[1306702671] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702672] Returning False for finished test
+[1306702672] Monitor role len is 1
+[1306702702] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702704] Returning False for finished test
+[1306702704] Monitor role len is 1
+[1306702734] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702736] Returning False for finished test
+[1306702736] Monitor role len is 1
+[1306702766] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702767] Returning False for finished test
+[1306702767] Monitor role len is 1
+[1306702797] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702799] Returning False for finished test
+[1306702799] Monitor role len is 1
+[1306702829] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702830] Returning False for finished test
+[1306702830] Monitor role len is 1
+[1306702860] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702862] Returning False for finished test
+[1306702862] Monitor role len is 1
+[1306702892] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702893] Returning False for finished test
+[1306702893] Monitor role len is 1
+[1306702923] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702925] Returning False for finished test
+[1306702925] Monitor role len is 1
+[1306702955] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702956] Returning False for finished test
+[1306702956] Monitor role len is 1
+[1306702986] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306702988] Returning False for finished test
+[1306702988] Monitor role len is 1
+[1306703018] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703020] Returning False for finished test
+[1306703020] Monitor role len is 1
+[1306703050] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703051] Returning False for finished test
+[1306703051] Monitor role len is 1
+[1306703081] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703083] Returning False for finished test
+[1306703083] Monitor role len is 1
+[1306703113] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703114] Returning False for finished test
+[1306703114] Monitor role len is 1
+[1306703144] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703146] Returning False for finished test
+[1306703146] Monitor role len is 1
+[1306703176] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703177] Returning False for finished test
+[1306703177] Monitor role len is 1
+[1306703207] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703209] Returning False for finished test
+[1306703209] Monitor role len is 1
+[1306703239] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703241] Returning False for finished test
+[1306703241] Monitor role len is 1
+[1306703271] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703272] Returning False for finished test
+[1306703272] Monitor role len is 1
+[1306703302] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703304] Returning False for finished test
+[1306703304] Monitor role len is 1
+[1306703334] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703335] Returning False for finished test
+[1306703335] Monitor role len is 1
+[1306703365] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703367] Returning False for finished test
+[1306703367] Monitor role len is 1
+[1306703397] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703398] Returning False for finished test
+[1306703398] Monitor role len is 1
+[1306703428] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703430] Returning False for finished test
+[1306703430] Monitor role len is 1
+[1306703460] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703461] Returning False for finished test
+[1306703461] Monitor role len is 1
+[1306703491] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703493] Returning False for finished test
+[1306703493] Monitor role len is 1
+[1306703523] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703525] Returning False for finished test
+[1306703525] Monitor role len is 1
+[1306703555] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703556] Returning False for finished test
+[1306703556] Monitor role len is 1
+[1306703586] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703588] Returning False for finished test
+[1306703588] Monitor role len is 1
+[1306703618] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703619] Returning False for finished test
+[1306703619] Monitor role len is 1
+[1306703649] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703651] Returning False for finished test
+[1306703651] Monitor role len is 1
+[1306703681] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703682] Returning False for finished test
+[1306703682] Monitor role len is 1
+[1306703712] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703714] Returning False for finished test
+[1306703714] Monitor role len is 1
+[1306703744] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703746] Returning False for finished test
+[1306703746] Monitor role len is 1
+[1306703776] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703777] Returning False for finished test
+[1306703777] Monitor role len is 1
+[1306703807] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703809] Returning False for finished test
+[1306703809] Monitor role len is 1
+[1306703839] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703840] Returning False for finished test
+[1306703840] Monitor role len is 1
+[1306703870] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703872] Returning False for finished test
+[1306703872] Monitor role len is 1
+[1306703902] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703903] Returning False for finished test
+[1306703903] Monitor role len is 1
+[1306703933] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703935] Returning False for finished test
+[1306703935] Monitor role len is 1
+[1306703965] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703967] Returning False for finished test
+[1306703967] Monitor role len is 1
+[1306703997] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306703998] Returning False for finished test
+[1306703998] Monitor role len is 1
+[1306704028] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704030] Returning False for finished test
+[1306704030] Monitor role len is 1
+[1306704060] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704061] Returning False for finished test
+[1306704061] Monitor role len is 1
+[1306704091] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704093] Returning False for finished test
+[1306704093] Monitor role len is 1
+[1306704123] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704124] Returning False for finished test
+[1306704124] Monitor role len is 1
+[1306704154] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704156] Returning False for finished test
+[1306704156] Monitor role len is 1
+[1306704186] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704188] Returning False for finished test
+[1306704188] Monitor role len is 1
+[1306704218] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704219] Returning False for finished test
+[1306704219] Monitor role len is 1
+[1306704249] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704251] Returning False for finished test
+[1306704251] Monitor role len is 1
+[1306704281] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704282] Returning False for finished test
+[1306704282] Monitor role len is 1
+[1306704312] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704314] Returning False for finished test
+[1306704314] Monitor role len is 1
+[1306704344] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704346] Returning False for finished test
+[1306704346] Monitor role len is 1
+[1306704376] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704377] Returning False for finished test
+[1306704377] Monitor role len is 1
+[1306704407] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704409] Returning False for finished test
+[1306704409] Monitor role len is 1
+[1306704439] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704440] Returning False for finished test
+[1306704440] Monitor role len is 1
+[1306704470] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704472] Returning False for finished test
+[1306704472] Monitor role len is 1
+[1306704502] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704503] Returning False for finished test
+[1306704503] Monitor role len is 1
+[1306704533] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704535] Returning False for finished test
+[1306704535] Monitor role len is 1
+[1306704565] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704567] Returning False for finished test
+[1306704567] Monitor role len is 1
+[1306704597] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704598] Returning False for finished test
+[1306704598] Monitor role len is 1
+[1306704628] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704630] Returning False for finished test
+[1306704630] Monitor role len is 1
+[1306704660] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704661] Returning False for finished test
+[1306704661] Monitor role len is 1
+[1306704691] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704693] Returning False for finished test
+[1306704693] Monitor role len is 1
+[1306704723] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704724] Returning False for finished test
+[1306704724] Monitor role len is 1
+[1306704754] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704756] Returning False for finished test
+[1306704756] Monitor role len is 1
+[1306704786] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704787] Returning False for finished test
+[1306704787] Monitor role len is 1
+[1306704817] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704819] Returning False for finished test
+[1306704819] Monitor role len is 1
+[1306704849] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704850] Returning False for finished test
+[1306704850] Monitor role len is 1
+[1306704881] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704882] Returning False for finished test
+[1306704882] Monitor role len is 1
+[1306704912] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704914] Returning False for finished test
+[1306704914] Monitor role len is 1
+[1306704944] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704945] Returning False for finished test
+[1306704945] Monitor role len is 1
+[1306704975] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306704977] Returning False for finished test
+[1306704977] Monitor role len is 1
+[1306705007] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705008] Returning False for finished test
+[1306705008] Monitor role len is 1
+[1306705038] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705040] Returning False for finished test
+[1306705040] Monitor role len is 1
+[1306705070] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705071] Returning False for finished test
+[1306705071] Monitor role len is 1
+[1306705102] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705103] Returning False for finished test
+[1306705103] Monitor role len is 1
+[1306705133] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705135] Returning False for finished test
+[1306705135] Monitor role len is 1
+[1306705165] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705166] Returning False for finished test
+[1306705166] Monitor role len is 1
+[1306705196] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705198] Returning False for finished test
+[1306705198] Monitor role len is 1
+[1306705228] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705229] Returning False for finished test
+[1306705229] Monitor role len is 1
+[1306705259] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705261] Returning False for finished test
+[1306705261] Monitor role len is 1
+[1306705291] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705292] Returning False for finished test
+[1306705292] Monitor role len is 1
+[1306705322] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705324] Returning False for finished test
+[1306705324] Monitor role len is 1
+[1306705354] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705355] Returning False for finished test
+[1306705355] Monitor role len is 1
+[1306705385] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705387] Returning False for finished test
+[1306705387] Monitor role len is 1
+[1306705417] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705419] Returning False for finished test
+[1306705419] Monitor role len is 1
+[1306705449] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705450] Returning False for finished test
+[1306705450] Monitor role len is 1
+[1306705480] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705482] Returning False for finished test
+[1306705482] Monitor role len is 1
+[1306705512] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705513] Returning False for finished test
+[1306705513] Monitor role len is 1
+[1306705543] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705545] Returning False for finished test
+[1306705545] Monitor role len is 1
+[1306705575] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705576] Returning False for finished test
+[1306705576] Monitor role len is 1
+[1306705607] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705608] Returning False for finished test
+[1306705608] Monitor role len is 1
+[1306705638] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705640] Returning False for finished test
+[1306705640] Monitor role len is 1
+[1306705670] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705671] Returning False for finished test
+[1306705671] Monitor role len is 1
+[1306705701] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705703] Returning False for finished test
+[1306705703] Monitor role len is 1
+[1306705733] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705734] Returning False for finished test
+[1306705734] Monitor role len is 1
+[1306705764] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705766] Returning False for finished test
+[1306705766] Monitor role len is 1
+[1306705796] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705797] Returning False for finished test
+[1306705797] Monitor role len is 1
+[1306705827] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705829] Returning False for finished test
+[1306705829] Monitor role len is 1
+[1306705859] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705860] Returning False for finished test
+[1306705860] Monitor role len is 1
+[1306705890] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705892] Returning False for finished test
+[1306705892] Monitor role len is 1
+[1306705922] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705923] Returning False for finished test
+[1306705923] Monitor role len is 1
+[1306705954] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705955] Returning False for finished test
+[1306705955] Monitor role len is 1
+[1306705985] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306705987] Returning False for finished test
+[1306705987] Monitor role len is 1
+[1306706017] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706018] Returning False for finished test
+[1306706018] Monitor role len is 1
+[1306706048] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706050] Returning False for finished test
+[1306706050] Monitor role len is 1
+[1306706080] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706081] Returning False for finished test
+[1306706081] Monitor role len is 1
+[1306706111] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706113] Returning False for finished test
+[1306706113] Monitor role len is 1
+[1306706143] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706144] Returning False for finished test
+[1306706144] Monitor role len is 1
+[1306706174] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706176] Returning False for finished test
+[1306706176] Monitor role len is 1
+[1306706206] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706208] Returning False for finished test
+[1306706208] Monitor role len is 1
+[1306706238] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706239] Returning False for finished test
+[1306706239] Monitor role len is 1
+[1306706269] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706271] Returning False for finished test
+[1306706271] Monitor role len is 1
+[1306706301] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706302] Returning False for finished test
+[1306706302] Monitor role len is 1
+[1306706332] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706334] Returning False for finished test
+[1306706334] Monitor role len is 1
+[1306706364] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706365] Returning False for finished test
+[1306706365] Monitor role len is 1
+[1306706395] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706397] Returning False for finished test
+[1306706397] Monitor role len is 1
+[1306706427] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706429] Returning False for finished test
+[1306706429] Monitor role len is 1
+[1306706459] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706460] Returning False for finished test
+[1306706460] Monitor role len is 1
+[1306706490] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706492] Returning False for finished test
+[1306706492] Monitor role len is 1
+[1306706522] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706523] Returning False for finished test
+[1306706523] Monitor role len is 1
+[1306706553] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706555] Returning False for finished test
+[1306706555] Monitor role len is 1
+[1306706585] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706586] Returning False for finished test
+[1306706586] Monitor role len is 1
+[1306706616] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706618] Returning False for finished test
+[1306706618] Monitor role len is 1
+[1306706648] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706649] Returning False for finished test
+[1306706649] Monitor role len is 1
+[1306706679] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706681] Returning False for finished test
+[1306706681] Monitor role len is 1
+[1306706711] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706713] Returning False for finished test
+[1306706713] Monitor role len is 1
+[1306706743] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706744] Returning False for finished test
+[1306706744] Monitor role len is 1
+[1306706774] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706776] Returning False for finished test
+[1306706776] Monitor role len is 1
+[1306706806] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706807] Returning False for finished test
+[1306706807] Monitor role len is 1
+[1306706837] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706839] Returning False for finished test
+[1306706839] Monitor role len is 1
+[1306706869] Executing: ssh -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com "if [ -f /tmp/done.txt ]; then echo exists; fi"
+[1306706870] Returning true for finished test
+[1306706870] Monitor role len is 0
+Deployment state changed to: JOB_COMPLETED
+[1306706900] Stopping roles
+Deployment state changed to: INSTANCES_STOPPED
+[1306706901] Roles stopped
+Deployment state changed to: COLLECTING_DATA
+[1306706901] Executing: scp -r -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com:/home/hpcc-user/hpccoutf.txt ./results/master/hpccout.txt/i-a42145d2/hpccoutf.txt
+[1306706902] Executing: scp -r -i /home/willmore/.ssh/id_rsa_nopw -o StrictHostKeyChecking=no hpcc-user@ec2-46-51-146-185.eu-west-1.compute.amazonaws.com:/var/lib/collectd/rrd/cloud-hpcc ./results/master/collectd_stats/i-a42145d2/cloud-hpcc
+Deployment state changed to: DATA_COLLECTED
+Deployment state changed to: SHUTTING_DOWN
+[1306706961] Shutdown monitor length = 1
+[1306706961] Instance state = shutting-down
+[1306706976] Shutdown monitor length = 1
+[1306706977] Instance state = shutting-down
+[1306706992] Shutdown monitor length = 1
+[1306706992] Instance state = shutting-down
+[1306707007] Shutdown monitor length = 1
+[1306707008] Instance state = shutting-down
+[1306707023] Shutdown monitor length = 1
+[1306707023] Instance state = shutting-down
+[1306707038] Shutdown monitor length = 1
+[1306707039] Instance state = terminated
+[1306707054] Reservation r-9c9033ea terminated
+Deployment state changed to: COMPLETED
